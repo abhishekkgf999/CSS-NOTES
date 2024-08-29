@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS variables</title>
+    <style>
+        /*
+        1.In CSS (Cascading Style Sheets), variables allow you to store values that you can reuse throughout your stylesheet. This can help you keep your CSS DRY (Don't Repeat Yourself), making it easier to maintain and update.
+
+        2.CSS variables are declared using custom property notation: "--variable-name". They are typically defined within a ":root" selector so that they can be accessed globally throughout the document.
+
+        3.Once declared, you can use the var() function to access these variables.
+
+        4.You can provide a fallback value in case the variable is not defined.
+
+        button {
+            background-color: var(--button-bg, #333); uses #333 if "--button-bg" is not defined 
+        }
+
+        */
+
+        /* GLOBAL VARIABLES */
+        :root {
+            --color: rgb(204, 0, 255);
+            --seccolor: rgba(183, 0, 255, 0.342);
+            --defpad: 23px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            background-color: var(--color);
+        }
+
+        ul {
+            display: flex;
+        }
+
+        ul li {
+            list-style: none;
+            padding: var(--defpad);
+            border: 12px solid var(--seccolor);
+        }
+
+        ul li:first-child {
+            /* LOCAL VARIABLES */
+            --color: rgba(0, 153, 255, 0.651);
+            background-color: var(--color, rgba(46, 46, 87, 0.548));
+        }
+
+        .container {
+            background-color: var(--seccolor);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium a aliquam atque officia tempora, voluptas
+        fugit necessitatibus, facilis, aspernatur quam at ipsam impedit rem quia nesciunt qui sed. Tenetur velit, soluta
+        neque dolor illum pariatur minus, fuga architecto eligendi blanditiis nihil rerum sit, quam optio?
+    </div>
+</body>
+
+</html>

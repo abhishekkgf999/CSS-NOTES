@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity</title>
+    <!--
+        #THE CASCADE ALGORITHM
+
+        -> The Cascade is the algorithm for solving conflicts where multiple CSS rules apply to an HTML element. 
+
+        1. Position and order of appearance: The order in which your CSS rules appear
+        2. SPecificity: An algorithm that determines which CSS selector has the strongest match
+        3. Origin: The order in which CSS appears and where it comes from, whetehr that is a browser style, CSS from  a browser extension
+                    , or your authored CSS 
+
+        4. Importance: Some CSS rules are weighted more heavily than others, especially with the ("!important" keyword)
+
+        #1. EFFECT OF POSITION
+
+        -> If there are two that have selectors of identical specificity, the last one to be declared won. 
+
+        #2. SPECIFICITY 
+
+        -> INLINE STYLE > ID SELECTOR > CLASS OR ATTRIBUTE SELECTOR > ELEMENT SELECTOR > UNIVERSAL SELECTOR
+
+        ***SPECIFICITY CALCULATION***
+        ~ Universal selector: 0
+        ~ Element Selector and pseudo-elements: 1
+        ~ Class selector, attribute selector, and pseudo-classes: 10
+        ~ ID selectors: 100
+        ~ Inline styles: 1000
+        ~ !important: 10000
+    -->
+    <style>
+        /* The specificity of this selector is 1 */
+        h1{
+            color: aqua;
+        }
+
+        /* The specificity of this selector is 10 */
+        .cpurple{
+            color: purple;
+        }
+
+        /* The specificity of this selector is 1 + 10 = 11 */
+        h1.yellow{
+            color: yellow;
+            /* color: blue !important;  CAN OVERWRITE INLINE CSS AS WELL */
+        }  
+
+        /* The specificity of this selector is 10 */
+        .cred{
+            color: red;
+        }
+
+        /* The specificity of this selector is 10 */
+        [data-x=a]{                        /* ATTRIBUTE SELECTOR  */
+            color: mediumseagreen;
+        }
+
+        /* The specificity of this selector is 1 + 10 + 10 + 10 + 10 = 41 */
+        a.harryclass.rohan-class[href]:hover{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="yellow cred cpurple" data-x="a">CSS Specificity</h1>
+    </div>
+</body>
+</html>

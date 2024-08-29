@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        #Element Selector 
+        
+        An element selector in CSS targets HTML elements by their tag name and applies 
+        styles to all instances of that element within a document.
+        */
+        div{
+            background-color: rgb(247, 100, 100);
+        }
+
+        /* 
+        #Class selector 
+
+        Class selectors in HTML and CSS allow you to style multiple elements with the same class, combine multiple classes on a single element, and create more specific rules by combining class selectors with other selectors.
+        */
+        .red{
+            background-color: lightblue;
+        }
+
+        /* 
+        #Id selector 
+        
+        An ID selector in HTML and CSS is used to apply styles to a single, unique element. Each ID in a document should be unique to ensure that the styles are applied to the correct element. ID selectors have higher specificity than class selectors and element selectors, making them useful for overriding other styles.
+        */
+        #green{
+            background-color: lightgreen;
+        }
+
+        /* 
+        #Child selector 
+        
+        The child selector in CSS is used to select and style elements that are direct children of a specified parent element. It is represented by a greater-than sign (>). The child selector allows you to target only the immediate children of an element, not any nested descendants.
+        */
+        div > p{
+            color: red;
+            background-color: lightblue;
+        }
+
+        /* 
+        #Descendent Selector 
+
+        A descendant selector in CSS is used to target elements that are descendants of a specified ancestor, regardless of their immediate parent. Unlike the child selector, which only targets direct children, the descendant selector applies styles to all elements that fall within the specified hierarchy.
+        */
+        div p{
+            color: darkcyan;
+            background-color: lightcyan;
+        }
+
+        /* Universal Selector */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Pseudo Selector */
+        a:visited{
+            color: lightseagreen;
+        }
+
+        a:link{
+            color: greenyellow;
+        }
+
+        a:active{
+            background-color: slateblue;
+        }
+
+        a:hover{
+            background-color: plum;
+        }
+
+        p:first-child{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <main class="one">
+        <p>I am first</p>
+        <p>I am second</p>
+    </main>
+    <div class="red">
+        I am Class selector
+    </div>
+    <div>
+        I am Element Selector
+    </div>
+    <div id="green">
+        I'm Id selector
+    </div>
+    <div>
+        I am Child selector
+        <p>I am a para inside div</p>
+    </div>
+    <div>
+        <article>
+            <p>I am Descendent Selector</p>
+        </article>
+    </div>
+    <a target="_blank" href="https://www.google.com">Go to google</a>
+    <a target="_blank" href="https://www.facebook2.com">Go to facebook</a>
+</body>
+</html>

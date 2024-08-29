@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        Media queries in CSS allow you to apply styles conditionally based on various characteristics of the viewport, such as its width, height, orientation, resolution, and more. 
+        
+        This is especially useful for creating responsive designs that adapt to different screen sizes and devices.
+        */
+        body{
+            background-color: red;
+        }
+
+        /*
+        @media not/only mediatype(all, print, screen, speech) and (Condition)
+        {
+            CSS-code;
+        }
+        */
+
+        @media screen and (orientation: landscape){
+            body{
+                border: 3px solid purple;
+            }
+        }
+
+        @media only screen and (max-width: 455px){
+            body{
+                background-color: rgba(0, 0, 255, 0.438);
+            }
+
+            .boxes{
+                flex-direction: column;
+            }
+        }
+
+        .boxes{
+            display: flex;
+        }
+
+        .box{
+            width: 344px;
+            height: 344px;
+            background-color: steelblue;
+            padding: 3px;
+            margin: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        Hey I am a red body guy!
+    </div>
+
+    <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

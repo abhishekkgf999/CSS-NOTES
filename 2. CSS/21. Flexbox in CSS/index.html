@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FlexBox</title>
+    <style>
+        /* 
+
+        #Flex Container:
+
+        The parent element that contains flex items.
+
+        Declared by setting display: flex; or display: inline-flex; on the container.
+
+        EX:- 1. justify-content:
+             2. align-items:
+             3. flex-direction:
+             4. flex-wrap:
+             5. align-content:
+             6. flex-flow:
+             7. gap:
+        ----------------------------------------------------------------------------------------------------------------------------------
+
+        #Flex Items:
+
+        The direct children of a flex container.
+
+        These items will automatically adjust their size and position within the flex container. 
+
+        EX:- 1. order:
+             2. flex-grow:
+             3. felx-shrink:
+             4. align-self:
+        */
+        .container {
+            border: 2px solid red;
+            display: flex;
+            height: 80vh;
+            /* 
+            #justify-content:
+            Aligns flex items along the main axis (horizontal by default). 
+            Values: flex-start, flex-end, center, space-between, space-around, space-evenly.
+            Note:- There is no justify-items concept in flexbox, and it does not needed
+            */
+            /* justify-content: center; */
+            /* 
+            #align-items:
+            Aligns flex items along the cross axis (vertical by default). 
+            Values: flex-start, flex-end, center, baseline, stretch.
+            Note:- if we have only 1 line of content, then we use align-items, more than 1 lines, than we use align-content
+            */
+            align-items: center;
+            /* 
+            #flex-direction:
+            Determines the direction of the flex items inside the container.
+            Values: row (default), row-reverse, column, column-reverse. 
+            */
+            /* flex-direction: column; */
+            /* 
+            #flex-wrap:
+            Controls whether the flex items should wrap onto multiple lines.
+            Values: nowrap (default), wrap, wrap-reverse. 
+            */
+            flex-wrap: wrap;
+            /* 
+            #align-content:
+            Aligns the flex lines when there's extra space in the cross axis.
+            Values: flex-start, flex-end, center, space-between, space-around, stretch.
+            Note:- use only when the content is present in multiple lines
+            */
+            /* align-content: flex-start; */
+            /* 
+            The flex-flow property in CSS is a shorthand for setting both flex-direction and flex-wrap properties together. 
+            */
+            flex-flow: row wrap;
+
+            /* gap: 30px; */
+            /* row-gap: 20px;
+            column-gap: 10px; */
+            gap: 40px 10px;     /*Shorthand for row and column*/
+        }
+
+
+
+        .item {
+            height: 62px;
+            width: 62px;
+            border: 2px solid black;
+            background-color: blueviolet;
+            /* margin: 4px; */
+        }
+
+        /* 
+        #order:
+        Defines the order of the flex items within the container. (default order is 0)
+        Lower values are displayed first. 
+        */
+        .order-1{
+            order: 1;
+        }
+        .order-2{
+            order: 2;
+        }
+        .order-3{
+            order: 3;
+        }
+
+        /* 
+        #flex-grow:
+        Defines the ability of a flex item to grow relative to the rest.
+        Values: A unitless number (default is 0).
+        */
+
+        /* 
+        #flex-shrink:
+        Defines the ability of a flex item to shrink if necessary.
+        Values: A unitless number (default is 1).
+        */
+
+        /* 
+        #align-self:
+        Overrides the align-items value for specific flex items.
+        Values: auto, flex-start, flex-end, center, baseline, stretch.
+        */
+        .item1{
+            /* flex-grow: 2; */
+            /* flex-shrink: 2; */
+            align-self: flex-end;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+            <div class="item item1">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item order-1">4</div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </main>
+
+</body>
+
+</html>

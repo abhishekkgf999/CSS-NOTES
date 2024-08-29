@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            box-sizing: border-box;
+            /*
+                            #PIXELS
+
+            1. **Fixed Size**: Pixels provide a fixed size that does not change based on the screen size or resolution. This can be useful for creating precise layouts.
+
+            2. **Resolution-Dependent**: A pixel is generally considered to be 1/96th of an inch. However, on different devices with varying pixel densities (like retina displays), the actual physical size of a pixel can vary.
+
+            3. **Common Usage**: `px` is often used for defining:
+                - Font sizes: `font-size: 16px;`
+                - Element dimensions: `width: 200px;`, `height: 100px;`
+                - Margins and padding: `margin: 10px;`, `padding: 15px;`
+                - Border widths: `border-width: 2px;`
+            */
+            border: 2px solid black;
+            /* width: 1515px; */    
+            
+            /*
+                        # vw and vh
+                        
+            **Responsiveness**: Elements sized with `vw` and `vh` units adjust automatically to the size of the viewport, making them ideal for responsive designs.
+
+            **Flexibility**: They allow for flexible and dynamic layouts that adapt to different screen sizes and orientations without the need for media queries.
+
+            ----------------------------------------------------------------------------------------------------------------------------
+
+            ### `vw` (Viewport Width)
+            - **Definition**: 1 `vw` is equal to 1% of the width of the viewport.
+            - **Usage**: Commonly used for setting widths of elements relative to the viewport width.
+
+            ----------------------------------------------------------------------------------------------------------------------------
+
+            ### `vh` (Viewport Height)
+            - **Definition**: 1 `vh` is equal to 1% of the height of the viewport.
+            - **Usage**: Commonly used for setting heights of elements relative to the viewport height.
+
+            */
+
+            width: 80vw; 
+            height: 10vh;
+
+
+            background-color: aquamarine;
+            margin: auto;     /* puts element in center only if it is "BLOCK ELEMENT" */
+        }
+
+        .container{
+            box-sizing: border-box;
+            border: 2px solid black;
+            width: 80vw;
+            /* height: 80vh;*/
+            min-height: 80vh;
+            background-color: aquamarine;
+            margin: 23px auto;
+            font-size: 18px;
+        }
+
+        html{
+            font-size: 12px;
+        }
+
+        .container p{
+            /*
+                                ### `em`
+            
+            - **Definition**: An `em` unit is relative to the font size of the element it's used on.
+
+            - **Usage**: Commonly used for font sizes, but can also be applied to dimensions, padding, margins, etc.
+
+            - **Inheritance**: `em` units multiply relative to the font size of their parent elements, which can lead to compounding sizes.
+
+            */
+            /* font-size: 2em; */
+
+
+            /* 
+                                ### `rem`
+
+            - **Definition**: A `rem` unit is relative to the font size of the root element (`<html>`).
+
+            - **Usage**: Preferred for font sizes and other properties to ensure consistency throughout the document.
+
+            - **Inheritance**: `rem` units do not compound because they always reference the root element's font size.
+            */
+            font-size: 2rem;
+        }
+
+        .mycont{
+            border: 2px solid black;
+            box-sizing: border-box;
+            margin: auto;
+            color: black;
+            font-size: 22px;
+            width: 80vw;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        This is a box
+    </div>
+    <div class="container">
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur atque vitae explicabo, mollitia esse voluptate, dolorum voluptatum voluptates excepturi incidunt aliquid ipsam adipisci laborum nihil. Quasi asperiores possimus corrupti eaque doloremque aut architecto qui harum consectetur et exercitationem esse, inventore adipisci, blanditiis nisi ipsam hic fugiat assumenda obcaecati praesentium. Perspiciatis possimus, officia impedit cupiditate adipisci asperiores.
+        </p>
+
+        <!-- YOU CAN ADD AS MANY TEXT TO ADJUST ITS HEIGHT -->
+    </div>
+
+    <div class="mycont">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, assumenda?
+        </p>
+    </div>
+</body>
+</html>
+
+
+
+<!-- 
+    In CSS, `vmin` and `vmax` are viewport-relative units that are based on the minimum and maximum dimensions of the viewport, respectively. These units can be particularly useful for creating responsive designs that adapt to both the width and height of the viewport.
+
+### `vmin`
+- **Definition**: 1 `vmin` is equal to 1% of the smaller dimension of the viewport (either width or height).
+- **Usage**: Useful for elements that need to adapt to the smaller dimension of the viewport.
+- **Example**:
+  ```css
+  .square {
+    width: 50vmin; /* 50% of the smaller dimension of the viewport */
+    height: 50vmin; /* Ensures a square shape */
+  }
+  ```
+
+### `vmax`
+- **Definition**: 1 `vmax` is equal to 1% of the larger dimension of the viewport (either width or height).
+- **Usage**: Useful for elements that need to adapt to the larger dimension of the viewport.
+- **Example**:
+  ```css
+  .full-screen {
+    width: 100vmax; /* 100% of the larger dimension of the viewport */
+    height: 100vmax; /* Ensures coverage of the larger dimension */
+  }
+  ```
+ -->

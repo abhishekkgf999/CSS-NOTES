@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 2px solid black;
+            padding: 34px;
+
+            /*
+                                # "box-shadow"
+
+            => CSS property that enables designers to add shodow effects around an elements's frame. 
+
+            syntax:- "box-shadow: h-offset v-offset blur spread color inset; "
+
+            -> "h-offset" and "v-offset" : Determines the shadows horizontal and vertical position.
+            -> "blur" : The larger the value, the blurier the shadow
+            -> "spread" : Expands or shrinks the shadow size.
+            -> "color" : Defines the shadow color
+            -> "inset" : Makes the shadow inner.
+            */
+
+            box-shadow: inset 12px 14px 5px #8b2a2a;
+        }
+
+        /*
+                            # ".text-shadow"
+        => Similar to box-shadow
+        */
+
+        /*
+                                # "outlines"
+            
+        => Difference between Outlines and Borders:
+
+        1. Position:- Oulines don't take up space, they're drawn around the element outside of any border.
+        2. Offset:- Using the outline-offset property, you can set the space between an outline and the edge or border of an element.
+        3. Width:- Borders can have varying widths on different sides, outlines have a uniform width.
+        4. Rounded Cornders:- Borders can have rounded corners Using border-radius. while outlines generally cannot.
+        */
+        .text-shadow {
+            text-shadow: 0px 0px 3px #0e8ba7;
+            outline: 2px solid #01af09;
+            border: 3px solid red;
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        I am a good boy
+    </div>
+    <p class="text-shadow">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis ea ut distinctio dolores in quod
+        repudiandae atque repellendus dolorum voluptates mollitia delectus architecto, optio nihil est commodi esse
+        libero laboriosam!
+    </p>
+</body>
+
+</html>
