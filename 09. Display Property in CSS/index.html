@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS DISPLAY PROPERTY</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            border: 2px solid blue;
+
+            /*
+            1. "block" :- element is rendered as a block level element (respects width and height properties)
+
+            2. "inline" :- element is rendered as a inline level element (does not respect width and height properties)
+
+            3. "inline-block" :- element is rendered as an inline level element, but it respects width and height properties
+            */
+            display: inline-block;
+            padding: 45px;
+            margin: 35px;
+            width: 40px;
+        }
+
+        .box1{
+            /* 
+            4. "none" :- element is not dispolayed and does not take up any space in the layout. Completely removes the element from the document flow.
+
+            5. "flex" :- element becomes a flex container, allowing its children (flex items) to be laid out using the flexbox model.
+
+            6. "grid" :- element becomes a grid container, allowing its children to be laid out using the grid model.
+            */
+
+            /* display: none; */
+
+            /* visibility: hidden; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        I am a box
+    </div>
+
+    <div class="box">
+        also a nice box
+    </div>
+
+    <span>I am a good</span>
+    <span>boy</span>
+</body>
+</html>

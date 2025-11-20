@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-1</title>
+    <style>
+        /* 
+        #Grid Container:
+
+        The parent element that holds the grid items.
+
+        Declared by setting display: grid; or display: inline-grid; on the container.
+
+        EX:- 1. grid-template-rows and grid-template-columns:
+             2. grid-column and grid-row:
+             3. gap:
+             4. justify items:
+             5. align-items:
+             6. justify content:
+             7. align content:
+
+
+        -----------------------------------------------------------------------------------------------------------------------------------------------
+
+        #Grid Items:
+
+        The direct children of a grid container.
+
+        These items can be placed in specific grid cells or areas.
+        */
+        .container{
+            border: 2px solid black;
+            display: grid;
+            width: 80vw;
+            height: 100vh;
+            /* 
+            #grid-template-rows and grid-template-columns:
+
+            Define the number and size of rows and columns.
+            Values can be fixed units (px, em), percentages, or flexible units (fr).
+            */
+            /* grid-template-columns: [pehla] 120px [doosra] 100px [t];   giving names to lines ex:- [name] 100px */
+            /* grid-template-rows: 100px 100px 100px; */
+
+            /* "fr" stands for fraction of width of container*/
+            /* grid-template-columns: 1fr 2fr 1fr; */
+
+            /* grid-template-columns: repeat(4, 1fr); */
+
+
+            /* 
+            The repeat(3, minmax(100px, 1fr)) in the example above creates three columns.
+            Each column has a minimum width of 100px and a maximum width of 1fr.
+            The 1fr value means that the remaining space will be distributed among these columns after taking into account the minimum width.  
+            */
+
+            /* grid-template-columns: repeat(4, minmax(100px, 1fr)); */
+
+
+            grid-template-columns: repeat(4, 40px);
+            grid-template-rows: repeat(2, 40px);
+
+            /* gap: 34px; */
+            row-gap: 20px;
+            column-gap: 40px;
+            
+            /* gap: 20px 40px;     shorthand for row-gap and column-gap */
+
+            /* 
+            #justify-items:
+
+            Aligns items horizontally within their grid cells. (same goes with justify-self:)
+            Values: start, end, center, stretch.
+            */
+
+            justify-items: center;
+
+            /* 
+            #align-items:
+
+            Aligns items vertically within their grid cells. (same goes with align-self:)
+            Values: start, end, center, stretch.
+            */
+            align-items: center;
+
+
+            /* 
+            #justify-content:
+
+            Aligns the entire grid horizontally within the container.
+            Values: start, end, center, space-between, space-around, space-evenly.
+            */
+            justify-content: center;
+            
+            /* 
+            #align-content:
+
+            Aligns the entire grid vertically within the container.
+            Values: start, end, center, space-between, space-around, stretch.
+
+            NOTE:- justify-content and align-content tb use krna hai jb, container bda ho or grid chhoti
+            */
+            align-content: center;
+        }
+
+        .item{
+            border: 2px solid red;
+            height: 55px;
+            width: 55px; 
+        }
+
+        .item-4{
+            /* 
+            #grid-column and grid-row:
+
+            Specify how many columns or rows an item should span.
+            Can be used individually or together
+            */
+            /* grid-row: 1/2;      /* Span from row 1 to 2 */
+            /* grid-column: pehla/t;   Span from row 1 to 2 */ 
+        }
+
+        .item-1{
+            /* grid-row: 1/2; */
+            /* or you can also do  */
+            /* grid-row-start: 1;
+            grid-row-end: 2; */
+
+            /* same thing */
+            /* grid-column: 1/2;  
+            align-self: start;
+            justify-self: end; */
+        }   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item item-4">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>

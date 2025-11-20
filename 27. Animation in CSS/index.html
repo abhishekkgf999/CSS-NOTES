@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation in CSS</title>
+    <style>
+        .container {
+            background-color: rgb(9, 106, 106);
+            height: 80vh;
+            width: 30vw;
+        }
+
+        .box {
+            width: 34px;
+            height: 45px;
+            background-color: aqua;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: AbhishekKaAnimation;
+        }
+
+        /* 
+        CSS animations are defined using two main components:
+
+        1. @keyframes: Defines the keyframes of the animation.
+        2. animation property: Applies the animation to an element.
+
+
+        @keyframes: Defines the sequence of keyframes for the animation.
+
+
+        @keyframes slide-in {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        from: Represents the starting state of the animation (0%).
+        to: Represents the ending state of the animation (100%).
+        You can also use percentages (0%, 50%, 100%) to define multiple steps in the animation.
+
+        -----------------------------------------------------------------------------------------------------------------------------
+
+        animation property: Shorthand for applying the animation to an element. It includes the following sub-properties:
+
+        1. animation-name: The name of the @keyframes animation to apply.
+        2. animation-duration: The length of time the animation should take to complete one cycle.
+        3. animation-timing-function: Controls the speed curve of the animation.
+        4. animation-delay: The time to wait before starting the animation.
+        5. animation-iteration-count: The number of times the animation should repeat. You can use infinite for continuous looping.
+        6. animation-direction: Defines whether the animation should play forward, backward, or alternate between forward and backward.
+        7. animation-fill-mode: Defines how a CSS animation should apply styles to its target before and after it is executing.
+        8. animation-play-state: Specifies whether the animation is running or paused.
+
+        */
+
+        @keyframes AbhishekKaAnimation {
+            from {
+                transform: translateX(1000px);
+            }
+
+            to {}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            Box
+        </div>
+    </div>
+</body>
+
+</html>

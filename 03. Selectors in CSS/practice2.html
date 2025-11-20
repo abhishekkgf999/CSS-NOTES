@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            color: rgb(22, 100, 126);
+            background-color: rgba(0, 255, 255, 0.13);
+            border: 2px solid rgb(22, 100, 126);
+            padding: 10px;
+        }
+
+        .class1{
+            color: white;
+            background-color: rgba(90, 21, 87, 0.801);;
+            border: 2px solid rgb(41, 3, 41);;
+        }
+
+        #idselector{
+            color: rgb(42, 181, 199);
+            background-color: rgba(103, 172, 172, 0.13);
+            border: 2px solid rgb(22, 100, 126);
+        }
+        div > p{
+            color: white;
+            background-color: black;
+            border: 5px solid red;
+        }
+
+        .Descendent p{
+            color: yellow;
+            background-color: black;
+            border: 5px solid red;
+        }
+
+        a{
+            background-color: rgba(232, 255, 127, 0.87);
+        }
+
+        a:visited{
+            color: rgb(97, 1, 97);
+        }
+
+        p:first-child{
+            color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+     <div>
+        I am Element selector.
+    </div>
+    <br>
+    <div class="class1">
+        I am Class selector.    
+    </div>
+    <br>
+    <div id="idselector">
+        I am Id selector.
+    </div>
+    <br>
+    <div>
+        <p>I am first child of div</p>
+        <span>
+            <p>I am nested child of div</p>
+        </span>
+        <p>I am also first child of div</p>
+    </div>
+    <br>
+    <div class="Descendent">
+        <p>I am first child2 of div</p>
+        <span>
+            <p>I am nested child2 of div</p>
+        </span>
+        <p>I am also first child2 of div</p>
+    </div>
+    
+    <a target="_blank" href="https://www.yahoo.com">Go to yahoo</a>
+    <br>
+    <a target="_blank" href="https://www.dingdong.com">Go to dingdong</a>   
+</body>
+</html>

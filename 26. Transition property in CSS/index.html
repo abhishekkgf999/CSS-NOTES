@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <style>
+        .container{
+            background-color: antiquewhite;
+            width: 50vw;
+            height: 40vh;
+        }
+
+        .box{
+            background-color: aqua;
+            width: 5vw;
+            height: 4vh;
+            /* 
+            1.property: The name of the CSS property you want to animate. You can specify a single property, multiple properties separated by commas, or use "all" to apply the transition to any property that changes.
+
+            Example: width, background-color, opacity, all.
+
+            -----------------------------------------------------------------------------------------------------------------------
+
+            2.duration: The time it takes for the transition to complete. This is usually defined in seconds (s) or milliseconds (ms).
+
+            Example: 0.3s, 1s, 500ms.
+
+            ------------------------------------------------------------------------------------------------------------------------
+            
+            3.timing-function (optional): This defines the speed curve of the transition, controlling how the intermediate steps of the transition are calculated.
+
+            Common values:
+            ease: A transition that starts slow, speeds up, then slows down (default).
+            linear: A constant speed from start to finish.
+            ease-in: Starts slowly and speeds up.
+            ease-out: Starts quickly and slows down.
+            ease-in-out: Starts slow, speeds up, then slows down.
+            cubic-bezier(x1, y1, x2, y2): Custom timing function.
+
+            --------------------------------------------------------------------------------------------------------------------------
+
+            4.delay (optional): The time to wait before the transition begins. This is also defined in seconds or milliseconds.
+
+            Example: 0s, 200ms.
+            */
+
+            /* transition-property: background-color, transform;
+            transition-duration: 3s;
+            transition-timing-function: ease-in-out;
+            transition-delay: 1s; */
+
+            /* shorthand for above properties */
+            transition: all 3s cubic-bezier(0, 0.96, 0.28, 0.99) 1s;
+        }
+
+        .translate{
+            transform: translateX(10vw) translateY(10vh) scale(2);
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box translate"></div>
+    </div>
+</body>
+</html>
